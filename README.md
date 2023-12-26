@@ -8,5 +8,6 @@ App Version
 6. Done
 -----------
 Web Version
-. Repeat Steps In App Version From 2-6
+1. Repeat Steps In App Version From 2-6
+2. Done
 -----------
