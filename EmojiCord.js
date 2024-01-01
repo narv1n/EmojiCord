@@ -76,7 +76,7 @@ function run(url) {
                 return response.json()
             })
             .then(data => {
-                for (var count = 0; count < data.length; count++) {
+                for (var count = 0; count < data.length; count+=1) {
                     console.log(data[count]['name'])
                     function display_emoji(emojiId) {
                         var item = document.createElement('img')
