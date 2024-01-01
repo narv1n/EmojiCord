@@ -83,10 +83,11 @@ function run(url) {
                         item.className = 'emoji-item'
                         if (['true', 'True', true].includes(data[count]['animated'].toString())) {
                             item.src = `https://cdn.discordapp.com/emojis/${emojiId}.gif?size=48&quality=lossless`
+                            item.setAttribute('animated-emoji-id', emojiId)
                         } else {
                             item.src = `https://cdn.discordapp.com/emojis/${emojiId}.webp?size=48&quality=lossless`
+                            item.setAttribute('noanimation-emoji-id', emojiId)
                         }
-                        item.setAttribute('data-emoji-id', emojiId)
                         item.style.width = '48px'
                         item.style.height = '48px'
                         item.style.margin = '5px'
@@ -94,12 +95,11 @@ function run(url) {
                         list.appendChild(item)
                         item.addEventListener('click', function (event) {
                             event.stopPropagation()
-                            var clickedEmojiId = item.getAttribute('data-emoji-id')
                             var textarea = document.createElement('textarea')
-                            if (['true', 'True', true].includes(data[count]['animated'].toString())) {
-                                textarea.value = `https://cdn.discordapp.com/emojis/${clickedEmojiId}.gif?size=48&quality=lossless`
+                            if (item.hasAttribute('animated-emoji-id') == true) {
+                                textarea.value = `https://cdn.discordapp.com/emojis/${item.getAttribute('animated-emoji-id')}.gif?size=48&quality=lossless`
                             } else {
-                                textarea.value = `https://cdn.discordapp.com/emojis/${clickedEmojiId}.webp?size=48&quality=lossless`
+                                textarea.value = `https://cdn.discordapp.com/emojis/${item.getAttribute('noanimation-emoji-id')}.webp?size=48&quality=lossless`
                             }
                             document.body.appendChild(textarea)
                             textarea.select()
