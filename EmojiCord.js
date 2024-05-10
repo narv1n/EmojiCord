@@ -16,7 +16,7 @@ container.style.zIndex = '9999'
 document.body.appendChild(container)
 var div = document.createElement('div')
 div.id = 'div'
-div.textContent = 'EmojiCord | Made By github.com/cellrd | Show/Hide UI Prefix: CTRL + X | Instructions: Click An Emoji Icon, CTRL + V In Chat'
+div.textContent = 'EmojiCord | Made By github.com/Ellisians | Show/Hide UI Prefix: CTRL + X | Instructions: Click An Emoji Icon, CTRL + V In Chat'
 div.style.padding = '10px'
 div.style.color = 'white'
 div.style.textAlign = 'center'
